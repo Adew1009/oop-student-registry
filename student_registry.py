@@ -17,6 +17,22 @@ class Student:
     @get_name.setter
     def set_name(self, new_name):
         pattern = r'^[a-zA-Z]{3,}$'  # Regex pattern
+        """
+        ^[a-zA-Z]{3,}$
+        Explanation:
+
+        ^ asserts the start of the string.
+        [a-zA-Z] matches any letter (uppercase or lowercase).
+        {3,} specifies that the previous character class (any letter) must appear at least 3 times.
+        $ asserts the end of the string.
+        Here's a breakdown of each component:
+
+        ^: Start of the string.
+        [a-zA-Z]: Match any letter (uppercase or lowercase).
+        {3,}: Match the previous character class (any letter) at least 3 times.
+        $: End of the string.
+        This regex ensures that the string consists only of letters (uppercase or lowercase) and is at least three characters long."""
+        
         if isinstance(new_name, str) and re.match(pattern, new_name):
             self._name = new_name
         else:
